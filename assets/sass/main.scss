@@ -1,0 +1,80 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "partials/variables";
+
+* {
+    box-sizing: border-box;
+}
+
+.parallaxParent {
+    height: 100vh;
+    overflow: hidden;
+    color: $white;
+    
+    & > div.parallax-background {
+        height: 200%;
+        position: relative;
+        top: -100%;
+        
+        .content {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+        }
+    }
+}
+
+.home {
+    background-color: $dark-blue-background;
+    
+    h1 {
+        color: $orange-ish;
+        font-family: 'Arimo';
+        font-weight: 400;
+        
+        span {
+            font-family: 'PT Sans';
+            text-transform: uppercase;
+        }
+    }
+}
+
+nav.gold {
+    border-bottom: 1px solid $gold-color;
+}
+
+nav.black {
+    border-bottom: 1px solid $black;
+}
+
+nav.teal {
+    border-bottom: 1px solid $teal;
+}
+
+.history {
+    background-color: $teal;
+}
+
+.mission {
+    background-color: $background-red;
+    
+    p {
+        font-size: 0.8em;
+    }
+}
+
+.nav-justified {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'PT Sans';
+    font-weight: 400;
+    
+    &>li {
+        display: table-cell;
+        width: 1%;
+        
+        a {
+            color: $white;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "louisiana-hot-sauce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YancyShmancy/louisiana-hot-sauce.git"
+  },
+  "author": "yancyshmancy@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YancyShmancy/louisiana-hot-sauce/issues"
+  },
+  "homepage": "https://github.com/YancyShmancy/louisiana-hot-sauce#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
+    "jquery": "^2.2.1"
+  }
+}
