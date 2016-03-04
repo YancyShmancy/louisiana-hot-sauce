@@ -4575,7 +4575,9 @@ a.bg-danger:focus, a.bg-danger:hover {
       width: 100%; }
 
 .home {
-  background-color: #0B3B5B; }
+  background: url("../img/Dark%20Blue%20Background%20shape.png") no-repeat, -webkit-linear-gradient(#0B3B5B, #0B3B5B);
+  background-position: center;
+  background-size: cover; }
   .home h1 {
     color: #ec977b;
     font-family: 'Arimo';
