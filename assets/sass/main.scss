@@ -5,10 +5,33 @@
     box-sizing: border-box;
 }
 
+
+
 section {
     padding: 60px 0;
     min-height: 100vh;
     width: 100%;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    
+    .background-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 1150px;
+        margin-left: -575px;
+        
+        transform: translateY(-50%);
+        
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.row {
+    margin: 30px 0;
 }
 
 h1 {
@@ -25,6 +48,7 @@ img {
     width: 100%;
     height: auto;
 }
+
 #home {
     background: $dark-blue-background;
     
@@ -32,6 +56,10 @@ img {
         color: $orange-ish;
         font-family: 'Arimo';
         font-weight: 400;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-top: -150px;
         
         span {
             font-family: 'PT Sans';
@@ -39,11 +67,20 @@ img {
         }
     }
     
+    img.pepper {
+        position: relative;
+        left: -100px;
+        top: 0px;
+        height: auto;
+        width: 150px !important;
+    }
+    
     p {
         color: $white;
         font-weight: 400;
         font-size: 0.9em;
         letter-spacing: 1px;
+        padding-left: 70px;
     }
 }
 
@@ -53,19 +90,14 @@ nav.gold {
 
 #history {
     background-color: $teal;
+    padding: 100px 0;
     
-    .container {
-//        background-image: url('../img/page2/heatWave-page2.png');
-//        background-size: 1000px;
-//        background-position: center;
-//        background-repeat: no-repeat;
-    }
-    
-    p {
-        font-size: 0.7em;
+    p.fit {
+        font-size: 0.8em;
         color: $white;
-        padding-right: 40px;
+        padding: 50px 130px 0 20px;
         margin-left: -20px;
+        text-align: justify;
     }
 }
 
@@ -75,15 +107,36 @@ nav.gold {
 
 #vision {
     background-color: $background-dark-red;
+    color: $white;
     
     p {
         font-size: 0.8em;
+        text-align: justify;
+    }
+    
+    .wide-fit {
+        transform: translateY(-10%);
+        padding: 0px 20px 0 40px; 
+    }
+    
+    .fit {
+        padding: 70px 50px 0 20px;     
     }
 }
 
 #logo {
     background-color: $background-orange;
     color: $white;
+    
+    .pc-img-container {
+        width: 100%;
+        padding-left: 15px;
+        
+        img {
+            width: 19%;
+            padding-right: 10px;
+        }
+    }
 }
 
 #color {
@@ -92,11 +145,43 @@ nav.gold {
 
 #typography {
     background-color: $background-red;
+    
+    .fit-left, 
+    .fit-right {
+        font-size: 0.8em;
+    }
+    
+    .fit-left.second {
+        padding-top: 5px;
+    }
+    
+    .fit-right {
+        padding-top: 40px;
+    }
+    
+    .background-image {
+        width: 1500px;
+        top: 0;
+        transform: translateX(0) translateY(-4%);
+        margin-left: -600px;
+    }
+    
+    .type-style {
+        margin-top: 300px;
+    }
+    
+    .card-in-sleeve {
+        margin-top: 180px;
+    }
+    
 }
 
 footer {
+    position: relative;
+    float: left;
     min-height: 50vh;
     background-color: $dark-blue-background;
+    color: $white;
 }
 
 .nav-justified {
