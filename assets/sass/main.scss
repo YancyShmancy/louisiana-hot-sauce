@@ -1,19 +1,40 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "partials/variables";
+@import "partials/fonts";
 
 * {
     box-sizing: border-box;
 }
 
-
+.hideme {
+    opacity: 0;
+    transition: 0.7s ease-in-out;
+    
+    &.left {
+        transform: translateX(-10%);
+    }
+    
+    &.right {
+        transform: translateX(10%);
+    }
+    
+    &.top {
+        transform: translateY(-10%);
+    }
+    
+    &.bottom {
+        transform: translateY(10%);
+    }
+}
 
 section {
     padding: 60px 0;
-    min-height: 100vh;
+    min-height: 110vh;
     width: 100%;
     position: relative;
     float: left;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     
     .background-image {
         position: absolute;
@@ -30,18 +51,66 @@ section {
     }
 }
 
+.divider {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 700px;
+    background: transparent;
+    
+    img {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    
+    &#teal {
+        background-color: $dark-blue-background;
+    }
+    
+    &#red {
+        background-color: $teal;
+        height: 600px;
+    }
+    
+    &#orange {
+        height: 800px;
+        background-color: $background-dark-red;
+    }
+    
+    &#gold {
+        background-color: $background-orange;
+        height: 550px;
+    }
+    
+    &#pink {
+        background-color: $background-tan;
+        height: 550px;
+    }
+    
+    &#light-red {
+        height: 570px;
+        background-color: $background-pink;
+    }
+    
+    &#footer {
+        height: 1100px;
+        background-color: $background-red;
+    }
+}
+
 .row {
     margin: 30px 0;
 }
 
-h1 {
-    font-family: 'PT Sans';
-    font-weight: 400;
+h1, h2, h3, h4 {
+    font-family: 'Futura Normal';
 }
 
-p {
-    font-family: 'PT Sans';
-    font-weight: 400;
+p, ul, li {
+    font-family: 'Futura Light';
 }
 
 img {
@@ -51,6 +120,31 @@ img {
 
 #home {
     background: $dark-blue-background;
+    background-image: url('../img/bgs/Page%201%20Background%20Pattern.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    
+    &>img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -500px;
+        margin-top: -200px;
+    }
+    
+    #salt {
+        width: auto;
+    }
+    
+    .background-image {
+        width: 400px;
+        margin-left: -270px;
+        
+        background: url('../img/page1/hat-dude.svg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
     
     h1 {
         color: $orange-ish;
@@ -90,43 +184,220 @@ nav.gold {
 
 #history {
     background-color: $teal;
-    padding: 100px 0;
+    background-image: url('../img/bgs/Page%202%20Background%20Pattern.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
     
-    p.fit {
+    padding: 60px 0 100px 0;
+    color: white;
+    
+    h1, h2, h3 {
+        color: $dark-blue-background;
+    }
+    
+    p {
         font-size: 0.8em;
-        color: $white;
-        padding: 50px 130px 0 20px;
-        margin-left: -20px;
+    }
+    
+    .fit {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -360px;
+        margin-top: -70px;
+        width: 380px;
+        
         text-align: justify;
+        
+        p {
+            width: 240px;
+            padding-right: 30px;
+        }
+        
+        h2 {
+            padding-top: 40px;
+            padding-right: 30px;
+            font-size: 4em;
+            font-style: italic;
+        }
+    }
+    
+    .fit-right {
+        width: 240px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: 250px;
+        margin-top: -150px;
+        padding: 0 10px;
+    }
+    
+    .remix {
+        width: 280px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: 300px;
+        margin-top: -330px;
+        
+        h2 {
+            font-size: 4em;
+            font-style: italic;
+        }
+    }
+    
+    .promise {
+        width: 280px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -330px;
+        margin-left: -180px;
+        
+        h1 {
+            font-size: 3em;
+        }
+        
+        p {
+            text-align: right;
+            font-size: 1.2em;
+            padding-left: 50px;
+            padding-right: 20px;
+        }
+        
     }
 }
 
 #iconography {
+    color: white;
     background-color: $background-tan;
+    
+    h1 {
+        color: $dark-blue-background;
+    }
+    
+    h4 {
+        font-size: 1em;
+    }
+    
+    .gold-text {
+        font-size: 1.2em;
+    }
+    
+    h4,
+    .gold-text {
+        color: $text-gold;
+    }
+    
+    #heat-wave {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -500px;
+        margin-top: 200px;
+    }
+    
+    .instrument {
+        position: relative;
+        padding-left: 140px;
+        
+        img {
+            position: absolute;
+            width: 100px;
+            left: 20px;
+            top: 0;
+        }
+        
+        .small-img {
+            width: 150px;
+            left: 0px;
+        }
+    }
 }
 
 #vision {
     background-color: $background-dark-red;
     color: $white;
+    background-image: url('../img/bgs/Page%203%20Background%20Pattern.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center;
+    
+    &>div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
     
     p {
         font-size: 0.8em;
         text-align: justify;
     }
     
-    .wide-fit {
-        transform: translateY(-10%);
-        padding: 0px 20px 0 40px; 
+    h1 {
+        font-size: 4em;
     }
     
-    .fit {
-        padding: 70px 50px 0 20px;     
+    .set-list {
+        width: 350px;
+        margin-left: -250px;
+        margin-top: 50px;
+        padding-right: 20px;
+        
+        h1 {
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+    }
+    
+    .lyrics {
+        
+        width: 300px;
+        margin-top: -230px;
+        margin-left: 40px;
+        
+        h1 {
+            padding-bottom: 30px;
+        }
+        
+        p {
+            padding-left: 80px;
+        }
     }
 }
 
 #logo {
     background-color: $background-orange;
     color: $white;
+    
+    .pepperclef {
+        position: relative;
+        
+        #pepper-img {
+            position: absolute;
+            width: 150px;
+            left: -120px;
+        }
+    }
+    
+    h1 {
+        font-size: 3.5em;
+        font-style: italic;
+    }
+    
+    h2 {
+        color: $text-red;
+        padding-bottom: 10px;
+    }
+    
+    p, ul, li {
+        font-size: 0.9em;
+    }
+    
+    img#signature-image {
+        margin-bottom: 20px;
+    }
     
     .pc-img-container {
         width: 100%;
@@ -137,33 +408,76 @@ nav.gold {
             padding-right: 10px;
         }
     }
+    
+    #heat-wave {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -120px;
+        margin-left: -900px;
+        width: 1100px;
+    }
 }
 
 #color {
     background-color: $background-pink;
+    color: white;
+    
+    h1, h2, h3, h4 {
+        color: $text-red;
+    }
+    
+    p, ul, li {
+        font-size: 0.9em;
+    }
+    
+    .small {
+        padding-top: 200px;
+    }
 }
 
 #typography {
     background-color: $background-red;
+    color: white;
     
-    .fit-left, 
-    .fit-right {
-        font-size: 0.8em;
+    h1, h2, h3, h4, h5 {
+        color: $text-silver;
     }
     
-    .fit-left.second {
-        padding-top: 5px;
+    .regular, 
+    .light, 
+    .italic {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 0.85em;
+        letter-spacing: 1px;
     }
     
-    .fit-right {
-        padding-top: 40px;
+    .regular {
+        margin-top: -420px;
+        margin-left: -140px;
+        
+        p {
+            font-family: 'Futura Normal';
+        }
+    }
+    
+    .light {
+        margin-top: -290px;
+        margin-left: 230px;
+        text-align: right;
+    }
+    
+    .italic {
+        margin-top: -165px;
+        margin-left: 130px;
+        font-style: italic;
     }
     
     .background-image {
         width: 1500px;
-        top: 0;
-        transform: translateX(0) translateY(-4%);
-        margin-left: -600px;
+        margin-top: -200px;
     }
     
     .type-style {
@@ -177,11 +491,24 @@ nav.gold {
 }
 
 footer {
-    position: relative;
-    float: left;
-    min-height: 50vh;
     background-color: $dark-blue-background;
     color: $white;
+    
+    div {
+        position: absolute;
+        top: 50%;
+        
+        h1 {
+            color: $teal;
+            font-size: 4em;
+            font-style: italic;
+            padding-bottom: 20px;
+        }
+        
+        p {
+            font-size: 1.5em;
+        }
+    }
 }
 
 .nav-justified {
