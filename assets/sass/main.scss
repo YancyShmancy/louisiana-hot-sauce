@@ -1,4 +1,5 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/hover.css/css/hover-min.css";
 @import "partials/variables";
 @import "partials/fonts";
 
@@ -6,9 +7,95 @@
     box-sizing: border-box;
 }
 
+.hvr-wobble-bottom {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transform-origin: 100% 0;
+  transform-origin: 100% 0;
+}
+.hvr-wobble-bottom:hover, .hvr-wobble-bottom:focus, .hvr-wobble-bottom:active {
+  -webkit-animation-name: hvr-wobble-bottom;
+  animation-name: hvr-wobble-bottom;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+.navbar-fixed-top {
+    width: 100%;
+    z-index: 99999;
+    background-color: $dark-blue-background;
+    border-bottom: 2px solid $gold-color;
+    overflow: hidden;
+    
+    button {
+        color: white !important;
+    }
+    
+    ul,
+    li,
+    a {
+        color: white !important;
+    }
+    
+    li:hover {
+        background-color: $gold-color;
+        
+        a {
+            color: $dark-blue-background !important;
+        }
+    }
+    
+    .active {
+        background-color: $gold-color;
+        color: $dark-blue-background !important;
+    }
+    
+    @media(max-width: 540px) {
+        
+        ul {
+            padding-top: 20px;
+        }
+        
+        li.nav-item {
+            width: 100%;
+            margin-left: 0 !important;
+            padding: 5px 0 5px 1rem;
+        }
+    }
+    
+    @media (min-width: 540px) {
+        
+        height: 75px !important;
+        line-height: 75px;
+        padding: 0;
+        
+        ul {
+            width: 90%;
+            margin: 0 5%;
+            text-align: center;
+
+            li {
+                min-width: 14%;
+                margin-left: 0 !important;
+            }
+        }
+    }
+}
+
 .hideme {
     opacity: 0;
-    transition: 0.7s ease-in-out;
+    transition: 0.7s ease-in;
     
     &.left {
         transform: translateX(-10%);
@@ -27,14 +114,35 @@
     }
 }
 
+.hideMeStart {
+    animation: fadein-start 0.7s ease-in;
+}
+
+@keyframes fadein-start {
+    
+    from { 
+        opacity: 0;
+        transform: translateX(10%)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 section {
     padding: 60px 0;
     min-height: 110vh;
     width: 100%;
     position: relative;
     float: left;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: hidden;
+    
+    &>img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
     
     .background-image {
         position: absolute;
@@ -54,12 +162,12 @@ section {
 .divider {
     position: relative;
     float: left;
-    width: 100%;
+    min-width: 100vw;
     height: 700px;
     background: transparent;
     
     img {
-        width: 100%;
+        min-width: 100%;
         height: auto;
         position: absolute;
         left: 0;
@@ -83,6 +191,10 @@ section {
     &#gold {
         background-color: $background-orange;
         height: 550px;
+        
+        @media (min-width: 1500px) {
+            height: 800px;
+        }
     }
     
     &#pink {
@@ -93,11 +205,19 @@ section {
     &#light-red {
         height: 570px;
         background-color: $background-pink;
+        
+        @media (min-width: 1500px) {
+            height: 800px;
+        }
     }
     
     &#footer {
         height: 1100px;
         background-color: $background-red;
+        
+        @media (min-width: 1500px) {
+            height: 1500px;
+        }
     }
 }
 
@@ -105,11 +225,16 @@ section {
     margin: 30px 0;
 }
 
-h1, h2, h3, h4 {
+h1, 
+h2, 
+h3, 
+h4 {
     font-family: 'Futura Normal';
 }
 
-p, ul, li {
+p, 
+ul, 
+li {
     font-family: 'Futura Light';
 }
 
@@ -124,17 +249,56 @@ img {
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
+    min-height: 800px;
     
-    &>img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-left: -500px;
-        margin-top: -200px;
+    .title {
+        padding-top: 125px;
+    }
+    
+    #music-note {
+        width: 75px;
+        margin-left: 260px;
+        margin-top: 130px;
     }
     
     #salt {
         width: auto;
+        margin-left: -500px;
+        margin-top: -250px;
+    }
+    
+    #guitar {
+        width: 150px;
+        margin-left: 400px;
+        margin-top: 100px;
+    }
+    
+    #pepper {
+        width: 100px;
+        margin-left: -400px;
+        margin-top: 150px;
+    }
+    
+    #accordion {
+        width: 120px;
+        margin-left: -500px;
+        margin-top: -100px;
+    }
+    
+    #triangle {
+        width: 75px;
+        margin-left: -400px;
+        margin-top: -250px;
+    }
+    
+    #trumpet {
+        width: 100px;
+        margin-left: -280px;
+    }
+    
+    #salt-2 {
+        width: auto;
+        margin-top: 250px;
     }
     
     .background-image {
@@ -189,8 +353,58 @@ nav.gold {
     background-size: auto 100%;
     background-position: center;
     
+    min-height: 710px;
+    
     padding: 60px 0 100px 0;
     color: white;
+    
+    #salt {
+        width: 50px;
+        margin-left: -500px;
+        margin-top: -200px;
+    }
+    
+    #trumpet {
+        width: 100px;
+        margin-left: -500px;
+        margin-top: -300px;
+    }
+    
+    #violin {
+        width: 250px;
+        margin-left: 175px;
+        margin-top: 150px;
+    }
+    
+    #sax {
+        width: 200px;
+        margin-top: -200px;
+        margin-left: -100px;
+    }
+    
+    #microphone {
+        width: 125px;
+        margin-top: 150px;
+        margin-left: 450px;
+    }
+    
+    #music-note {
+        width: 150px;
+        margin-top: -120px;
+        margin-left: -130px;
+    }
+    
+    #salt-2 {
+        width: 50px;
+        margin-top: 200px;
+        margin-left: 380px;
+    }
+    
+    #salt-3 {
+        width: 50px;
+        margin-left: 350px;
+        margin-top: -250px;
+    }
     
     h1, h2, h3 {
         color: $dark-blue-background;
@@ -272,6 +486,16 @@ nav.gold {
 #iconography {
     color: white;
     background-color: $background-tan;
+    padding-bottom: 300px;
+    background-image: url('../img/bgs/Page%205%20Background%20Pattern.png');
+    background-size: auto 100%;
+    background-repeat: repeat-y;
+    background-position: center;
+    
+    #restaurant-stand {
+        width: 60%;
+        margin: 0 20%;
+    }
     
     h1 {
         color: $dark-blue-background;
@@ -295,7 +519,8 @@ nav.gold {
         top: 50%;
         left: 50%;
         margin-left: -500px;
-        margin-top: 200px;
+        margin-top: 400px;
+        width: 1400px;
     }
     
     .instrument {
@@ -323,6 +548,56 @@ nav.gold {
     background-repeat: no-repeat;
     background-size: auto 100%;
     background-position: center;
+    
+    min-height: 670px;
+    
+    #hands {
+        width: 150px;
+        margin-left: -500px;
+        margin-top: -300px;
+    }
+    
+    #yellow-music {
+        width: 50px;
+        margin-left: -425px;
+        margin-top: -170px;
+    }
+    
+    #accordion {
+        width: 150px;
+        margin-left: -600px;
+        margin-top: 200px;
+    }
+    
+    #salt {
+        width: 50px;
+        margin-left: -550px;
+        margin-top: -160px;
+    }
+    
+    #salt-2 {
+        width: 50px;
+        margin-left: 460px;
+        margin-top: -170px;
+    }
+    
+    #piano {
+        width: 125px;
+        margin-left: 475px;
+        margin-top: 150px;
+    }
+    
+    #white-music {
+        width: 100px;
+        margin-left: 450px;
+        margin-top: -300px;
+    }
+    
+    #white-music-2 {
+        width: 100px;
+        margin-left: 400px;
+        margin-top: 225px;
+    }
     
     &>div {
         position: absolute;
@@ -370,6 +645,10 @@ nav.gold {
 #logo {
     background-color: $background-orange;
     color: $white;
+    background-image: url('../img/bgs/Page%204%20Background%20Pattern.png');
+    background-size: auto 100%;
+    background-repeat: repeat-y;
+    background-position: center;
     
     .pepperclef {
         position: relative;
@@ -422,6 +701,10 @@ nav.gold {
 #color {
     background-color: $background-pink;
     color: white;
+    background-image: url('../img/bgs/Page%207%20Background%20Pattern.png');
+    background-size: auto 100%;
+    background-repeat: repeat-y;
+    background-position: center;
     
     h1, h2, h3, h4 {
         color: $text-red;
@@ -439,6 +722,10 @@ nav.gold {
 #typography {
     background-color: $background-red;
     color: white;
+    background-image: url('../img/bgs/Page%206%20Background%20Pattern.png');
+    background-size: auto 100%;
+    background-repeat: repeat-y;
+    background-position: center;
     
     h1, h2, h3, h4, h5 {
         color: $text-silver;

@@ -15,7 +15,7 @@ module.exports = function(options) {
     });
     
     gulp.task('js:build', function () {
-       return gulp.src('/assets/**/js/*.js')
+       return gulp.src(options.jsDir + '/**/*.js')
           .pipe(eslint())
           .pipe(eslint.format(friendlyFormatter))
           .pipe(uglify())
